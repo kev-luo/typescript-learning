@@ -68,3 +68,9 @@ var multiply = function (a, b) {
 var noReturn = function (a, b) {
     console.log(a, b);
 };
+var logDetails = function (uid, item) {
+    console.log(item + " has uid of " + uid);
+};
+var userGreet = function (user) {
+    console.log(user.name + " says hello");
+};
