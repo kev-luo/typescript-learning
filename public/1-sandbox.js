@@ -1,15 +1,15 @@
 "use strict";
-var character = 'mario';
+const character = 'mario';
 // explicitly define the diameter argument as a number
-var circ = function (diameter) {
+const circ = (diameter) => {
     return diameter * Math.PI;
 };
 console.log(circ(4));
 // when defining arrays, the values in the array will be inferred based on what the initial values are. In this case typescript will only allow numbers to be added to this array
-var numbers = [10, 20, 30, 40];
+let numbers = [10, 20, 30, 40];
 numbers[1] = 23;
 // numbers.push("hello"); // Argument of type 'string' is not assignable to parameter of type 'number'
-var player = {
+let player = {
     name: "messi",
     team: "barcelona",
     age: 32
