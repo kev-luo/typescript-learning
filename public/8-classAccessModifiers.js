@@ -1,4 +1,3 @@
-"use strict";
 // Access Modifiers
 // =======================================================
 class InvoicePrivate {
@@ -21,7 +20,7 @@ privateInvoices.forEach(inv => {
     console.log(inv.format());
     // console.log(inv.amount); // Property 'amount' is private and only accessible within class 'InvoicePrivate'.
 });
-class InvPrivateShortHand {
+export class InvPrivateShortHand {
     constructor(client, details, amount) {
         this.client = client;
         this.details = details;
@@ -41,3 +40,13 @@ privInvoicesSH.forEach(inv => {
     console.log(inv.format());
     // console.log(inv.amount); // Property 'amount' is private and only accessible within class 'InvoicePrivate'.
 });
+export class Payment {
+    constructor(recipient, details, amount) {
+        this.recipient = recipient;
+        this.details = details;
+        this.amount = amount;
+    }
+    format() {
+        return `${this.recipient} is owed $${this.amount} for ${this.details}`;
+    }
+}

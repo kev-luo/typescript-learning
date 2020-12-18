@@ -1,4 +1,3 @@
-"use strict";
 // Type Castings, DOM Manipulation
 // =======================================================
 const anchor = document.querySelector("a");
@@ -11,15 +10,15 @@ console.log(anchor2.href);
 const formElem = document.querySelector("form");
 // typescript only knows this is an Element since classes can be applied to any number of elements
 // therefore we typecast to cast this type to HTMLFormElement
-const form = document.querySelector(".new-item-form");
+export const form = document.querySelector(".new-item-form");
 console.log(form.children);
 // select each input field
-const typeInput = document.querySelector("#type");
-const toFromInput = document.querySelector("#tofrom");
-const detailsInput = document.querySelector("#details");
-const amountInput = document.querySelector("#amount");
+export const typeInput = document.querySelector("#type");
+export const toFromInput = document.querySelector("#tofrom");
+export const detailsInput = document.querySelector("#details");
+export const amountInput = document.querySelector("#amount");
 form.addEventListener("submit", handleSubmit);
-function handleSubmit(e) {
+export function handleSubmit(e) {
     e.preventDefault();
     console.log({
         type: typeInput.value,

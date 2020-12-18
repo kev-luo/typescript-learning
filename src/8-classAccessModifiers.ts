@@ -1,3 +1,5 @@
+import { HasFormatter } from "./10-interfacesWithClasses.js";
+
 // Access Modifiers
 // =======================================================
 
@@ -34,7 +36,7 @@ privateInvoices.forEach(inv => {
   // console.log(inv.amount); // Property 'amount' is private and only accessible within class 'InvoicePrivate'.
 })
 
-class InvPrivateShortHand {
+export class InvPrivateShortHand implements HasFormatter {
   constructor(
     public client: string,
     readonly details: string,
@@ -59,3 +61,15 @@ privInvoicesSH.forEach(inv => {
   console.log(inv.format());
   // console.log(inv.amount); // Property 'amount' is private and only accessible within class 'InvoicePrivate'.
 })
+
+export class Payment implements HasFormatter {
+  constructor(
+    public recipient: string,
+    readonly details: string,
+    private amount: number,
+  ) {}
+
+  format() {
+    return `${this.recipient} is owed $${this.amount} for ${this.details}`
+  }
+}
