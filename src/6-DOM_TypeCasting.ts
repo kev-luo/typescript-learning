@@ -1,3 +1,5 @@
+// Type Castings, DOM Manipulation
+// =======================================================
 const anchor = document.querySelector("a");
 // question mark prevents an error if there are no anchor tags ("cannot read property href of undefined")
 console.log(anchor?.href);

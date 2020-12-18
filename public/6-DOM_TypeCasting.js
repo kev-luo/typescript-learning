@@ -1,4 +1,6 @@
 "use strict";
+// Type Castings, DOM Manipulation
+// =======================================================
 var anchor = document.querySelector("a");
 // question mark prevents an error if there are no anchor tags ("cannot read property href of undefined")
 console.log(anchor === null || anchor === void 0 ? void 0 : anchor.href);
