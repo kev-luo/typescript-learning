@@ -2,7 +2,7 @@ import { Invoice } from "./classes/Invoice.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./interfaces/HasFormatter.js";
 
-let invList: Invoice[] = [];
+let docs: HasFormatter[] = [];
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 const typeInput = document.querySelector("#type") as HTMLSelectElement;
@@ -13,10 +13,15 @@ form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e: Event) {
   e.preventDefault();
-  const newSub = new Invoice(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
-  invList.push(newSub);
-  console.log(invList);
-}
 
-let docOne: HasFormatter;
-let docTwo: HasFormatter;
+  let newSub: HasFormatter;
+
+  if(typeInput.value === "invoice") {
+    newSub = new Invoice(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+  } else {
+    newSub = new Payment(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+  }
+
+  docs.push(newSub);
+  console.log(docs);
+}
