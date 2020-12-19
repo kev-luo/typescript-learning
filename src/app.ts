@@ -19,11 +19,12 @@ function handleSubmit(e: Event) {
   e.preventDefault();
 
   let newSub: HasFormatter;
+  let values: [string, string, number] = [toFromInput.value, detailsInput.value, amountInput.valueAsNumber]
 
   if(typeInput.value === "invoice") {
-    newSub = new Invoice(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+    newSub = new Invoice(...values);
   } else {
-    newSub = new Payment(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+    newSub = new Payment(...values);
   }
 
   displayList.render(newSub, typeInput.value, "end")

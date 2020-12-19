@@ -13,11 +13,12 @@ const displayList = new ListTemplate(itemList);
 function handleSubmit(e) {
     e.preventDefault();
     let newSub;
+    let values = [toFromInput.value, detailsInput.value, amountInput.valueAsNumber];
     if (typeInput.value === "invoice") {
-        newSub = new Invoice(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+        newSub = new Invoice(...values);
     }
     else {
-        newSub = new Payment(toFromInput.value, detailsInput.value, amountInput.valueAsNumber);
+        newSub = new Payment(...values);
     }
     displayList.render(newSub, typeInput.value, "end");
 }
